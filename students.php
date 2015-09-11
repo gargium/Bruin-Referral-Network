@@ -119,7 +119,7 @@
                 Rohan Kapoor, Rak Garg, and trusted recruiters are the only ones who will be granted access.
                 <div class="pfblock-subtitle">
                     <div class="calltoaction-btn">
-                        <form action="students.html" method="post" enctype="multipart/form-data">
+                        <form action="students.php" method="post" enctype="multipart/form-data">
                         
                         <input type="file" name="resume">
                         <input type="submit" name="upload" value="Send Resume">
@@ -128,12 +128,30 @@
 
                     <?php 
                     if (isset($_POST['upload'])) {
-                        echo $file_name = $_FILES['resume']['name'];
-                        $file_type = $_FILES['resume']['type'];
-                        $file_size = $_FILES['resume']['size'];
-                        $file_tmp_name = $_FILES['resume']['tmp_name'];
+                         $file_name = $_FILES['resume']['name'];
+                         $file_type = $_FILES['resume']['type'];
+                         $file_size = $_FILES['resume']['size'];
+                         $file_tmp_name = $_FILES['resume']['tmp_name'];
+                                        
+                        $ext = substr($file_name, strrpos($file_name, '.') + 1);
+                        //make sure we got a valid file
+                        if ($file_name=='') {
+                            echo "<script>alert('Please select a file.')</script>";
+                        }
+                        elseif ($file_size > 2000000) {
+                                echo "<script>alert('Sorry! We only accept files less than 2MB in size.')</script>";
+                        }
+                        elseif($ext != "pdf" or $ext != "txt" or $ext != "docx" or $ext != "doc" or $ext != "pages" ) {
+                                echo "<script>alert('We only accept resumes in PDF, DOCX, DOC, TXT, or PAGES formats')</script>";
+                        }
+                        else {
+                            move_uploaded_file($file_tmp_name, "resumes/$file_name");
+                            echo "Resume Uploaded.";
+                        }
+
                     }
 
+                    //check to make sure filename is valid 
 
                     ?> 
                     <!--  <a href="" class="btn btn-lg">Send Resume</a> -->

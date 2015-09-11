@@ -42,6 +42,8 @@ a:hover {
 			transition: all 0.4s ease-in-out 0s;
 }
 
+input[type=file],
+input[type=submit],
 a,
 .btn {
 	-webkit-transition: all 0.125s ease-in-out 0s;
@@ -55,6 +57,8 @@ a,
  * Reset box-shadow
 /* ---------------------------------------------- */
 
+input[type=file],
+input[type=submit],
 .btn,
 .form-control,
 .form-control:hover,
@@ -108,6 +112,8 @@ h6 {
  * Reset border-radius
 /* ---------------------------------------------- */
 
+input[type=file],
+input[type=submit],
 .btn,
 .iconbox,
 .progress,
@@ -174,6 +180,8 @@ textarea.form-control {
  * Custom button style
 /* ---------------------------------------------- */
 
+input[type=file],
+input[type=submit],
 .btn {
 	font-family: Raleway, sans-serif;
 	text-transform: uppercase;
@@ -183,6 +191,8 @@ textarea.form-control {
 	border: 0;
 }
 
+input[type=file],
+input[type=submit],
 .btn:hover,
 .btn:focus,
 .btn:active,
@@ -192,6 +202,8 @@ textarea.form-control {
 
 /* Button size */
 
+input[type=file],
+input[type=submit],
 .btn-lg,
 .btn-group-lg > .btn {
 	padding: 10px 25px;
@@ -200,6 +212,9 @@ textarea.form-control {
     background: rgba(17, 17, 17, 0.8);
     color: #fff;
 }
+
+input[type=file],
+input[type=submit],
 .btn-lg:hover,
 .btn-group-lg > .btn:hover{
 	line-height: 20px;
@@ -207,11 +222,20 @@ textarea.form-control {
     color: #fff;
 }
 
+
+input[type=file] {
+	background: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+}
+
+
+
 .btn-sm,
 .btn-group-sm > .btn {
 	padding: 6px 25px;
 	font-size: 11px;
 }
+
 
 .btn-xs,
 .btn-group-xs > .btn {
@@ -219,10 +243,13 @@ textarea.form-control {
 	font-size: 10px;
 }
 
+input[type=file],
+input[type=submit],
 .btn .icon-before {
 	margin-right: 6px;
 }
-
+input[type=file],
+input[type=submit],
 .btn .icon-after {
 	margin-left: 6px;
 }
@@ -322,16 +349,22 @@ textarea.form-control {
     color: #fff;
 }
 
+input[type=file],
+input[type=submit],
 .calltoaction-btn {
 	text-align: center;
 }
 
+input[type=file],
+input[type=submit],
 .calltoaction-btn > .btn {
     background: rgba(255, 255, 255, .8);
     color: #111;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+input[type=file],
+input[type=submit],
 .calltoaction-btn > .btn:hover{
     background: #fff;
 }
