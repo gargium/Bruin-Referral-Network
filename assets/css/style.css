@@ -301,7 +301,7 @@ input[type=submit],
 }
 
 .pfblock-title{
-	font-size: 40px;
+	font-size: 30px;
     font-weight: 100;
 }
 
@@ -509,7 +509,7 @@ input[type=submit],
 #footer span{
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    color: #ff5252;
+    color: #E86850;
 }
 
 .social-links {
@@ -1007,7 +1007,7 @@ figure.effect-bubba:hover p {
 	border: 0px solid white;
 	box-shadow: 3px 3px 3px 3px #b7b7b7;
 	min-height: 250px;
-	padding: 60px;
+	padding: 50px;
 	margin: 0px;
 	background: transparent;
 }
@@ -1030,5 +1030,16 @@ figure.effect-bubba:hover p {
 	justify-content: center;
 	flex-direction: column;
 	height: 250px;
+}
+
+.about-background{
+	background: linear-gradient( rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) ), url(../images/meeting.jpg);
+	width: 100%;
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
 }
 
