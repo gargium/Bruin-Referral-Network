@@ -259,7 +259,7 @@ textarea.form-control {
 
 .pfblock-header {
 	text-align: center;
-	margin: 0 0 60px;
+	margin: 0 0 20px;
 }
 
 .pfblock-header-left {
@@ -272,7 +272,8 @@ textarea.form-control {
 }
 
 .pfblock-title{
-    font-weight: 800;
+	font-size: 40px;
+    font-weight: 100;
 }
 
 .pfblock-subtitle {
@@ -343,7 +344,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .home-background{
-	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, .7) ), url(../images/cover.jpg);
+	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../images/cover3.jpg);
 	width: 100%;
 	background-position: center center;
 	background-repeat: none;
@@ -965,5 +966,28 @@ figure.effect-bubba:hover p {
 		width: 80px;
 	}
 
+}
+
+.card{
+	width: 100%;
+	border: 0px solid white;
+	box-shadow: 3px 3px 3px 3px #b7b7b7;
+	min-height: 250px;
+	padding: 60px;
+	margin: 0px;
+	background: white
+}
+#mainbox{
+	box-sizing: border-box;
+	justify-content: left;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#mainbox2{
+	box-sizing: border-box;
+	justify-content: left;
+	display: flex;
+	flex-wrap: wrap;
 }
 
