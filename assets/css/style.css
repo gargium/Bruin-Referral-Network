@@ -302,7 +302,7 @@ input[type=submit],
 .pfblock-title{
 	font-size: 30px;
     font-weight: 100;
-    padding-top: 20px;
+    padding-top: -20px;
     padding-bottom: 0px;
 }
 
@@ -310,11 +310,13 @@ input[type=submit],
 	font-size: 200px;
 }
 
+
+
 .pfblock-subtitle {
 	font-family: Raleway, sans-serif;
 	font-style: normal;
 	font-size: 16px;
-	padding-top: 50px;
+	padding-top: 20px;
 	padding-bottom: 120px;
 }
 
