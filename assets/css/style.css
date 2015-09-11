@@ -326,9 +326,17 @@ input[type=submit],
 	padding-bottom: 120px;
 }
 
+.pfblock-subtitle3 {
+	font-family: Raleway, sans-serif;
+	font-style: normal;
+	font-size: 16px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
 .pfblock-line {
-	background: rgba(135, 135, 135, 0.5);
-	width: 200px;
+	background: #E86850;;
+	width: 300px;
 	height: 1px;
 	margin: 30px auto;
 
@@ -400,7 +408,7 @@ input[type=submit],
 /* ---------------------------------------------- */
 
 .home-background{
-	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../images/cover3.jpg);
+	background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) ), url(../images/cover3.jpg);
 	width: 100%;
 	background-position: center center;
 	background-repeat: none;
