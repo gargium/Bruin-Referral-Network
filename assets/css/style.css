@@ -1086,3 +1086,14 @@ figure.effect-bubba:hover p {
 	-o-background-size: cover;
 }
 
+.recruits-background{
+	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../images/recruiters.jpg);
+	width: 100%;
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
