@@ -279,7 +279,7 @@ textarea.form-control {
 }
 
 .pfblock-subtitle {
-	font-family: Raleway, "Times New Roman", Times, sans-serif;
+	font-family: Raleway, sans-serif;
 	font-style: normal;
 	font-size: 16px;
 }
@@ -298,15 +298,15 @@ textarea.form-control {
     text-align: center;
 }
 .calltoaction {
-	background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) ), url(../images/resume.jpg);
-	background-repeat: no-repeat;
-	background-position: 0 0;
+	background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .4) ), url(../images/resume.jpg);
+	width: 100%;
+	background-position: center center;
+	background-repeat: none;
 	-webkit-background-size: cover;
-	   -moz-background-size: cover;
-		 -o-background-size: cover;
-			background-size: cover;
-	padding: 100px 0;
-	color: #999;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+
 }
 
 .calltoaction h2 {
@@ -386,7 +386,7 @@ textarea.form-control {
 }
 
 .start {
-	font-family: Raleway, "Times New Roman", Times, sans-serif;
+	font-family: Raleway, sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	text-transform: none;
@@ -976,7 +976,7 @@ figure.effect-bubba:hover p {
 	min-height: 250px;
 	padding: 60px;
 	margin: 0px;
-	background: white
+	background: transparent;
 }
 #mainbox{
 	box-sizing: border-box;
@@ -990,5 +990,12 @@ figure.effect-bubba:hover p {
 	justify-content: left;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.flex-center-vertically {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 250px;
 }
 
