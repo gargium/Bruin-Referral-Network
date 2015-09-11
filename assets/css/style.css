@@ -301,25 +301,36 @@ input[type=submit],
 }
 
 .pfblock-title{
-	font-size: 30px;
+	font-size: 200px;
     font-weight: 100;
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
 
 .pfblock-subtitle {
 	font-family: Raleway, sans-serif;
 	font-style: normal;
 	font-size: 16px;
+	padding-top: 50px;
+	padding-bottom: 120px;
 }
 
 .pfblock-line {
 	background: rgba(135, 135, 135, 0.5);
-	width: 100px;
+	width: 200px;
 	height: 1px;
 	margin: 30px auto;
+
 }
 
 .pfblock-icon {
 	font-size: 32px;
+}
+
+.subtitle-main {
+	color: #fff;
+
+
 }
 .calltoaction *{
     text-align: center;
@@ -390,8 +401,8 @@ input[type=submit],
 
 .home-overlay {
     background-color: rgba(44, 62, 80, 0.3);
-    background-image: url("../images/pattern.png");
-    background-repeat: repeat;
+/*    background-image: url("../images/pattern.png");
+*/    background-repeat: repeat;
     height: 100%;
     left: 0;
     position: absolute;
