@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean - One Page Personal Portfolio</title>
+    <title>Gig</title>
 
     <!-- CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -43,14 +43,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">John Doe</a>
+                <a class="navbar-brand" href="index.html">Gig</a>
             </div>
 
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li class="active"><a href="students.html">Students</a></li>
+                    <li class="active"><a href="students.php">Students</a></li>
                     <li><a href="recruiters.html">Recruiters</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -81,14 +81,15 @@
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">Students</h2>
                         <div class="pfblock-subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at
-                            dictum turpis. Maecenas posuere, nisl a auctor maximus, turpis diam lobortis
-                            purus, et consequat sapien dolor at lacus. Nulla cursus a lorem ac sodales. Suspendisse
-                            rutrum, tellus non tempus pretium, est ligula dictum erat, in congue turpis dolor ut erat.
-                            Nulla at risus tempor, interdum elit nec, luctus ipsum. In pharetra, tellus et tristique
-                            vestibulum, arcu dolor iaculis erat, nec pretium ex neque sit amet augue. Donec posuere
-                            elit a enim ornare, nec dictum nisl mattis. Pellentesque dignissim purus vitae odio
-                            pellentesque, sed convallis libero efficitur.
+                            Connection building can be tough and seem extraneous to getting an internship in the field you love. 
+                            That's why we do it for you, so that you can get back to what's important.<br><br>Our function is simple: We take your 
+                            email address and resume, and connect it to recruiters and companies looking for top talent like you. You'll get emails
+                            about new opportunities, get introduced to numerous Bruins, and gain referrals and connections within organizations we think
+                            you'll love. 
+
+                            <br><br>
+                            <a href="#info" class="btn btn-lg">Let's get started</a>
+
                         </div>
                     </div>
 
@@ -107,74 +108,87 @@
 
 <!-- CallToAction start -->
 
-<section class="pfblock calltoaction">
+<section class="pfblock calltoaction" id="info">
     <div class="container">
 
         <div class="row text-center">
-            <h2 style="padding-bottom: 10px;">Send In Your Info</h2>
+            <h1 style="padding-bottom: 10px; padding-top:100px; ">Send In Your Info</h1>
         </div>
-        <div class="row" style="padding-bottom: 10px;">
+        <div class="row" style="padding-bottom: 0px;">
             <div class="col-lg-1"></div>
-            <div class="col-lg-5 pfblock-subtitle" style="color: white;">
-                Rohan Kapoor, Rak Garg, and trusted recruiters are the only ones who will be granted access.
+            <div class="pfblock-subtitle" style="color: white;">
+                <h2>Join our mailing list and we'll send you instructions on what to do next. </h2>
                 <div class="pfblock-subtitle">
-                    <div class="calltoaction-btn">
-                        <form action="students.php" method="post" enctype="multipart/form-data">
-                        
-                        <input type="file" name="resume">
-                        <input type="submit" name="upload" value="Send Resume">
 
-                    </form>
+                    <?php
 
-                    <?php 
-                    if (isset($_POST['upload'])) {
-                         $file_name = $_FILES['resume']['name'];
-                         $file_type = $_FILES['resume']['type'];
-                         $file_size = $_FILES['resume']['size'];
-                         $file_tmp_name = $_FILES['resume']['tmp_name'];
-                                        
-                        $ext = substr($file_name, strrpos($file_name, '.') + 1);
-                        //make sure we got a valid file
-                        if ($file_name=='') {
-                            echo "<script>alert('Please select a file.')</script>";
-                        }
-                        elseif ($file_size > 2000000) {
-                                echo "<script>alert('Sorry! We only accept files less than 2MB in size.')</script>";
-                        }
-                        elseif($ext != "pdf" or $ext != "txt" or $ext != "docx" or $ext != "doc" or $ext != "pages" ) {
-                                echo "<script>alert('We only accept resumes in PDF, DOCX, DOC, TXT, or PAGES formats')</script>";
-                        }
-                        else {
-                            move_uploaded_file($file_tmp_name, "resumes/$file_name");
-                            echo "Resume Uploaded.";
+                        //check for header injections
+                        function has_header_injection($str) {
+                            return preg_match("/[\r\n]/", $str);
                         }
 
-                    }
+                        if (isset($_POST['contact_submit'])) {
+                            $name = trim($_POST['name']);
+                            $email = trim($_POST['email']); 
 
-                    //check to make sure filename is valid 
+                            //check to see if name or email have header injections
+                            if (has_header_injection($name) || has_header_injection($email)) {
+                                die(); 
+                            } 
 
-                    ?> 
+                            //basic validation checks
+                            if (!$name || !$email) {
+                                echo '<script>alert("All fields are required.")</script>'; 
+                            }
+
+
+                            //add recipient
+                            $to = "raks.garg@gmail.com";
+                            $subject = "$name wants to be on the email list for Gig!";
+                            $message = "Name: $name\r\n";
+                            $message .= "Email: $email\r\n"; 
+
+                            $message = wordwrap($message, 72); 
+
+                            //set mail headers 
+                            $headers = "MIME-Version: 1.0\r\n";
+                            $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n"; 
+                            $headers .= "From: $name <$email> \r\n";
+                            $headers .= "X-Priority: 1\r\n";
+                            $headers .= "X-MSMail-Priority: High\r\n\r\n"; 
+
+                            //send mail
+                            mail($to, $subject, $message, $headers); 
+                    ?>
+
+                    <!-- show success message -->
+                    <h5>You're all set. We'll contact you shortly.</h5>
+
+                    <?php } else { ?>
+
+
+                    <h4 style="padding-top:10px">All fields are required.</h4>
+                    <form method="post" action="" id="contact-form">
+                        <input type="text" id="name" name="name" placeholder="name" style="color: #000; width: 25%" >
+                        <br>
+                        <input type="text" id="email" name="email" placeholder="email" style="color: #000; width: 25%">
+                        <br><br>
+                        <input type="submit" name="contact_submit" class="btn btn-lg" value="Sign me up">
                     <!--  <a href="" class="btn btn-lg">Send Resume</a> -->
-                    </div>
+                    </form>
+                    <?php } ?>
+
                 </div>
             </div>
-            <div class="col-lg-5 pfblock-subtitle" style="color:white;">
-                Join our mailing list to recieve updates on our activity and the latest recruitment opportunities.
-                <div class="pfblock-subtitle" style="color:#111; font-weight: 100; margin-top: 5px; margin-bottom: 5px;">
-                    <input placeholder="UCLA emails only" style="width: 250px; line-height: 40px; border: 1px solid #111; background: rgba(255, 255, 255, .8); border-radius:2px;">
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>
-    </div><!-- .container -->
+    </div>
 </section>
 
 <!-- CallToAction end -->
 
-<section class="pfblock pfblock-gray">
+<!-- <section class="pfblock pfblock-gray">
     <div class="container"></div>
 </section>
-
+ -->
 
 <!-- Footer start -->
 
@@ -192,11 +206,11 @@
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
                 </ul>
 
-                <p class="heart">
-                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
-                </p>
+                <p class="heart"> 
+                    a better hiring experience.
+                </p> 
                 <p class="copyright">
-                    © 2015 John Doe | Images: <a href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
+                    © 2015 Gig | Images: <a href="https://unsplash.com/">Unsplash</a></a>
                 </p>
 
             </div>
