@@ -141,7 +141,10 @@
                                 echo '<script>alert("All fields are required.")</script>'; 
                             }
 
-
+                            $email_domain = substr($email, -8);
+                            if ($email_domain != "ucla.edu") {
+                                echo '<script>alert("Sorry! We are currently only accepting UCLA students.")</script>'; 
+                            }
                             //add recipient
                             $to = "raks.garg@gmail.com";
                             $subject = "$name wants to be on the email list for Gig!";
@@ -167,7 +170,7 @@
                     <?php } else { ?>
 
 
-                    <h4 style="padding-top:10px">All fields are required.</h4>
+                    <h4 style="padding-top:10px">All fields are required. Use your ucla.edu email address. </h4>
                     <form method="post" action="" id="contact-form">
                         <input type="text" id="name" name="name" placeholder="name" style="color: #000; width: 25%" >
                         <br>
