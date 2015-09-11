@@ -52,7 +52,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="students.html">Students</a></li>
+                    <li><a href="students.php">Students</a></li>
                     <li><a href="recruiters.html">Recruiters</a></li>
                     <li class="active"><a href="contact.html">Contact</a></li>
                 </ul>
@@ -66,21 +66,22 @@
 
 <!-- Navigation end -->
 
+<section id="testimonials" class="pfblock">
 
-
-<!-- Contact start -->
-
-<section id="contact" class="pfblock">
     <div class="container">
+
         <div class="row">
 
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-12">
 
-                <div class="pfblock-header">
+                <div class="pfblock-header wow fadeInUp">
                     <h2 class="pfblock-title">Contact</h2>
-                    <div class="pfblock-line"></div>
-                    <div class="pfblock-subtitle">
-                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
+
+                    <div class="pfblock-subtitle3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at
+                        dictum turpis. Maecenas posuere, nisl a auctor maximus, turpis diam lobortis
+                        purus, et consequat sapien dolor at lacus. Maecenas posuere, nisl a auctor maximus, turpis diam lobortis
+                        purus, et consequat sapien dolor at lacus.
                     </div>
                 </div>
 
@@ -88,36 +89,67 @@
 
         </div><!-- .row -->
 
-        <div class="row">
+            <form id="contact-form" role="form">
 
-            <div class="col-sm-6 col-sm-offset-3">
-
-                <form id="contact-form" role="form">
                     <div class="ajax-hidden">
-                        <div class="form-group wow fadeInUp">
-                            <label class="sr-only" for="c_name">Name</label>
-                            <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-                        </div>
+                        <div class="row col-sm-8 col-sm-offset-2">
+                            <div class="form-group wow fadeInUp">
+                                <label class="sr-only" for="c_name">Name</label>
+                                <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
+                            </div>
 
-                        <div class="form-group wow fadeInUp" data-wow-delay=".1s">
-                            <label class="sr-only" for="c_email">Email</label>
-                            <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
-                        </div>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                                <label class="sr-only" for="c_email">Email</label>
+                                <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+                            </div>
 
-                        <div class="form-group wow fadeInUp" data-wow-delay=".2s">
-                            <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                                <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+                            </div>
                         </div>
-
-                        <button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <a href="#info" class="btn btn-lg col-sm-2">Send</a>
+                            <div class="col-sm-5"></div>
                     </div>
                     <div class="ajax-response"></div>
-                </form>
+
+
+
+            </form>
+
+
+
+        <div class="row">
+
+            <div id="cbp-qtrotator" class="cbp-qtrotator">
+                <div class="cbp-qtcontent">
+                    <img src="assets/images/client-1.jpg" alt="client-1" />
+                    <blockquote>
+                        <p>Work with John was a pleasure. He understood exactly what I wanted and created an awesome site for my company.</p>
+                        <footer>Pino Caruso</footer>
+                    </blockquote>
+                </div>
+                <div class="cbp-qtcontent">
+                    <img src="assets/images/client-2.jpg" alt="client-2" />
+                    <blockquote>
+                        <p>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without problems.</p>
+                        <footer>Jane Doe</footer>
+                    </blockquote>
+                </div>
 
             </div>
 
         </div><!-- .row -->
-    </div><!-- .container -->
+
+
+    </div><!-- .row -->
 </section>
+
+
+<!-- Contact start -->
+
+
 
 <!-- Contact end -->
 
