@@ -210,7 +210,7 @@
                 </ul>
 
                 <p class="heart"> 
-                    a better hiring experience.
+                    an alternative to a traditional hiring experience.
                 </p> 
                 <p class="copyright">
                     © 2015 Gig | Images: <a href="https://unsplash.com/">Unsplash</a></a>

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800,100,200,600);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
 /*!
@@ -20,7 +20,7 @@ img {
 }
 
 a {
-	color: #E7746F;
+	color: #E86850;
 }
 
 a:hover {
@@ -301,7 +301,7 @@ input[type=submit],
 
 .pfblock-title{
 	font-size: 30px;
-    font-weight: 100;
+    font-weight: 300;
     padding-top: -20px;
     padding-bottom: 0px;
 }
@@ -337,7 +337,7 @@ input[type=submit],
 }
 
 .pfblock-line {
-	background: #E86850;;
+	background: #E86850;
 	width: 300px;
 	height: 1px;
 	margin: 30px auto;
@@ -528,6 +528,7 @@ input[type=submit],
 	text-align: center;
 	padding: 40px 0;
 	color: #FFF;
+	font-weight: 100;
 }
 
 .copyright {
@@ -613,7 +614,7 @@ input[type=submit],
 .navbar-custom .navbar-nav > li.active a {
 	background: none;
 	outline: 0;
-	color: #E7746F;
+	color: #E86850;
 }
 
 .navbar-custom .navbar-brand {
@@ -624,7 +625,7 @@ input[type=submit],
 
 .navbar-custom .dropdown-menu {
 	border: 0;
-	border-top: 2px solid #E7746F;
+	border-top: 2px solid #E86850;
 	border-radius: 0;
 }
 
@@ -668,7 +669,7 @@ input[type=submit],
 .scroll-up a:hover,
 .scroll-up a:active {
 	background-color: rgba(235, 235, 235, .8);
-	color: #e7746f;
+	color: #E86850;
 }
 
 /* ---------------------------------------------- /*
@@ -868,7 +869,7 @@ input[type=submit],
 /*---------------*/
 
 figure.effect-bubba {
-	background: #9e5406;
+	background: #E86850;
 }
 
 figure.effect-bubba img {
@@ -987,7 +988,7 @@ figure.effect-bubba:hover p {
 
 .cbp-qtprogress {
 	position: absolute;
-	background: #FF5252;
+	background: #E86850;
 	height: 1px;
 	width: 0%;
 	top: 0;
