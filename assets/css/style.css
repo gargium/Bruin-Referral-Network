@@ -526,7 +526,7 @@ input[type=submit],
 #footer {
 	background: #222;
 	text-align: center;
-	padding: 40px 0;
+	padding: 20px 0;
 	color: #FFF;
 	font-weight: 100;
 }
@@ -548,7 +548,7 @@ input[type=submit],
 .social-links {
 	list-style: none;
 	padding: 0;
-	margin: 0 0 20px;
+	margin: 0 0 5px;
 }
 
 .social-links li {
@@ -557,10 +557,10 @@ input[type=submit],
 }
 
 .social-links a {
-	width: 36px;
-	height: 36px;
+	width: 35px;
+	height: 35px;
 	display: block;
-	line-height: 35px;
+	line-height: 34px;
 	text-align: center;
 	border: 1px solid rgba(255, 255, 255, .1);
 	-webkit-border-radius: 3px;
@@ -572,7 +572,7 @@ input[type=submit],
 
 .social-links a:hover {
 	border: 1px solid rgba(255, 255, 255, .5);
-	color: rgba(255, 255, 255, .8);
+	color: rgba(255, 255, 255, 1);
 }
 
 /* ---------------------------------------------- /*
@@ -1096,5 +1096,14 @@ figure.effect-bubba:hover p {
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
+}
+
+.vertical-divider{
+	border-left:1px solid white;
+	border-right:1px solid white;
+	height:10px;
+	position:absolute;
+	right:249px;
+	top:10px;
 }
 

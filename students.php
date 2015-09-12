@@ -195,8 +195,20 @@
 
 <!-- Footer start -->
 
-<footer id="footer">
+	<footer id="footer">
     <div class="container">
+		<div class="row" style="padding-top: 20px;">
+
+			<div class="col-sm-12" style="padding-bottom: 40px;">
+					<a href="index.html" style="border-right: 1px solid white; padding-right: 20px;">Home</a>
+					<a href="about.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">About</a>
+					<a href="students.php" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Students</a>
+					<a href="recruiters.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Recruiters</a>
+					<a href="contact.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Contact</a>
+					<a href="faq.html" style="padding-left: 20px;">FAQs</a>
+			</div>
+
+		</div><!-- .row -->
         <div class="row">
 
             <div class="col-sm-12">
@@ -209,7 +221,7 @@
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
                 </ul>
 
-                <p class="heart"> 
+                <p style="margin-bottom: 5px !important;">
                     an alternative to a traditional hiring experience.
                 </p> 
                 <p class="copyright">
