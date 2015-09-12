@@ -26,17 +26,12 @@
             font-size: 16px;
             line-height:20px;
             background: white; /* Main background */
-            margin-bottom: 10px;
-            border: 1px solid #969696;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
+            margin-bottom: 20px;
         }
 
         /* Toggle Link text */
         .toggle a.toggle-trigger {
             display:block;
-            padding: 10px 20px 15px 20px;
             position:relative;
 
             color: #666;
@@ -51,7 +46,7 @@
         /* Toggle link when clicked */
         .toggle a.active {
             text-decoration: none;
-            border-bottom: 1px solid #969696;
+            border-bottom: 1px solid #f2f2f2;
             -webkit-box-shadow: 0 8px 6px -6px #ccc;
             -moz-box-shadow: 0 8px 6px -6px #ccc;
             box-shadow: 0 8px 6px -6px #ccc;
@@ -59,16 +54,9 @@
         }
 
         /* Lets add a "-" before the toggle link */
-        .toggle a.toggle-trigger:before {
-            content: "+";	/* You can add any symbol, font icon, or graphic icon */
-            margin-right: 10px;
-            font-size: 1.3em;
-        }
 
-        /* When the toggle is active, change the "-" to a "+" */
-        .toggle a.active.toggle-trigger:before {
-            content: "-";
-        }
+
+
 
         /* The content of the toggle */
         .toggle .toggle-content {
