@@ -8,17 +8,19 @@ if(isset($_POST['message'])){
 	$message = $_POST['message'];
 	$company = $_POST['company'];
 
-
 	$to      = 'raks.garg@gmail.com';
 	$subject = 'Gig Recruiters Contact Form';
 
-    $message .= 'Company: $company' ;
+    $email_body = 'Name: $name\r\n' ;
+    $email_body .=  'Email: $email\r\n'; 
+    $email_body .= 'Company: $company\r\n'; 
+    $email_body .= 'Message: $message\r\n'
 
-	$headers = 'From: '. $email . "\r\n" .
+	$headers = 'From: '. $name . "\r\n" .
     'Reply-To: '. $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-	$status = mail($to, $subject, $message, $headers);
+	$status = mail($to, $subject, $email_body, $headers);
 
 	if($status == TRUE){
 		$res['sendstatus'] = 'done';
