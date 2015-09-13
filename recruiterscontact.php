@@ -18,8 +18,8 @@ if(isset($_POST['submit'])){
 
 	$headers = 'From: '. $email . "\r\n" . 'Reply-To: '. $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
-	if (!$name || !$ email || !$message || $company ) {
-    	$res['message'] = 'All fields are required. Please go back and re-send your message.'
+	if (!$name || !$email || !$message || !$company ) {
+    	$res['message'] = 'All fields are required. Please go back and re-send your message.';
     	$status = FALSE; 
     }
     else {
