@@ -87,8 +87,7 @@
                             Simply sign up with your name and email address. You will receive an email with a
                             link to send in your resume. From there we will send it to recruiters and companies
                             looking for top talent like you. You’ll get emails about new opportunities, get
-                            introduced to numerous Bruins, and gain referrals and connections within organizations
-                            we think you’ll love.
+                            introduced to numerous Bruins, and gain referrals and connections within organizations we think you’ll love.
 
                             <br><br>
                             <a href="#info" class="btn btn-lg">Let's get started</a>

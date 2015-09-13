@@ -87,31 +87,27 @@
 
         </div><!-- .row -->
         <div class="pfblock-line"></div>
-        <form id="contact-form" role="form">
+        <form method="post" action="recruiterscontact.php">
             <div class="row" style="padding-top: 0px;">
                 <div class="col-sm-6 flex-center-vertically">
 
                         <div class="ajax-hidden">
                             <div class="form-group wow fadeInUp">
                                 <label class="sr-only" for="c_name">Name</label>
-                                <input type="text" id="c_name" class="form-control" style="font-size: 14px;" name="c_name" placeholder="Name*">
+                                <input class="form-control" name="name" placeholder="Name">
+                            </div>
+
+                            <div class="form-group wow fadeInUp">
+                                <label class="sr-only" for="c_company">Company</label>
+                                <input class="form-control" name="company" placeholder="Company">
                             </div>
 
                             <div class="form-group wow fadeInUp" data-wow-delay=".1s">
-                                <label class="sr-only" for="c_company">Company</label>
-                                <input type="text" id="c_company" class="form-control" style=" font-size: 14px;" name="c_compnay" placeholder="Company*">
+                                <label class="sr-only" for="c_email">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="E-mail">
                             </div>
 
-                            <div class="row">
-                                <div class="col-sm-8 form-group wow fadeInUp" data-wow-delay=".1s">
-                                    <label class="sr-only" for="c_email">Email</label>
-                                    <input type="email" id="c_email" class="form-control" style=" font-size: 14px;" name="c_email" placeholder="E-mail*">
-                                </div>
-                                <div class="col-sm-4 form-group wow fadeInUp" data-wow-delay=".1s">
-                                    <label class="sr-only" for="c_phone">Phone</label>
-                                    <input type="tel" id="c_phone" class="form-control" style=" font-size: 14px;" name="c_phone" placeholder="Phone">
-                            </div>
-                        </div>
+
 
                     </div>
 
@@ -122,7 +118,7 @@
                     <div class="ajax-hidden">
 
                         <div class="form-group wow fadeInUp" data-wow-delay=".2s">
-                            <textarea class="form-control" id="c_message" name="c_message" rows="7" style=" font-size: 14px;" placeholder="What type of students are you looking for?*"></textarea>
+                            <textarea class="form-control" name="message" rows="7" placeholder="Message"></textarea>
                         </div>
 
                     </div>
@@ -133,7 +129,7 @@
 
             <div class="row" style="text-align: center;">
                 <div class="col-sm-5"></div>
-                <a href="#info" class="btn btn-lg col-sm-2">Send</a>
+                <input class="btn btn-lg col-sm-2 contact-btn" id="submit" name = "submit" type="submit" value="submit" >
                 <div class="col-sm-5"></div>
             </div>
         </form>
