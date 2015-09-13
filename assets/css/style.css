@@ -1114,3 +1114,15 @@ figure.effect-bubba:hover p {
 	top:10px;
 }
 
+.contact-btn{
+	background: rgba(17, 17, 17, 0.8) !important;
+	color: #fff !important;
+}
+
+.contact-btn:hover{
+	background: rgba(17, 17, 17, 1) !important;
+	color: #fff !important;
+}
+
+
+
