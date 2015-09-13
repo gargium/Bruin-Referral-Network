@@ -15,16 +15,21 @@ if(isset($_POST['message'])){
     'Reply-To: '. $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-	$status = mail($to, $subject, $message, $headers);
+    if (!$name || !$ email || !$message) {
+    	$res['message'] = 'All fields are required. Please go back and re-send your message.'
+    	$status = FALSE; 
+    }
+    else {
+    	$status = mail($to, $subject, $message, $headers);
+    }
+
 
 	if($status == TRUE){	
 		$res['sendstatus'] = 'done';
-	
-		//Edit your message here
 		$res['message'] = 'Form Submission Successful';
     }
 	else{
-		$res['message'] = 'Failed to send mail. Please mail me to you@example.com';
+		$res['message'] = 'Form submission failed. Please email me at raks.garg@gmail.com';
 	}
 	 
 	
