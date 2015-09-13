@@ -1,7 +1,7 @@
 
 <?php
 
-if(isset($_POST['message'])){
+if(isset($_POST['submit'])){
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
@@ -21,6 +21,7 @@ if(isset($_POST['message'])){
     }
     elseif (substr($email, -8) != 'ucla.edu') {
     	$res['message'] = "Sorry! We're currently only accepting UCLA students. Please sign up with your ucla.edu email address if you have one.";
+    	    	$status = FALSE; 
     }
     else {
     	$status = mail($to, $subject, $message, $headers);

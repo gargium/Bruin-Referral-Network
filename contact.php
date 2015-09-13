@@ -15,7 +15,7 @@ if(isset($_POST['message'])){
     'Reply-To: '. $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-    if (!$name || !$ email || !$message) {
+    if (!$name || !$email || !$message) {
     	$res['message'] = 'All fields are required. Please go back and re-send your message.';
     	$status = FALSE; 
     }
