@@ -8,28 +8,29 @@ if(isset($_POST['message'])){
 	$message = "Name: $name\r\n";
     $message .= "Email: $email\r\n";
 
-    $message = wordwrap($message, 72);
-
-
 	$to      = 'raks.garg@gmail.com';
-	$subject = 'Gig General Contact Form';
+	$subject = 'Gig Waiting List Request Form';
 
 	$headers = 'From: '. $email . "\r\n" .
     'Reply-To: '. $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-	$status = mail($to, $subject, $message, $headers);
-
-	if($status == TRUE){
-		$res['sendstatus'] = 'done';
-
-		//Edit your message here
-		$res['message'] = 'Form Submission Successful';
+	if (!$name || !$ email) {
+    	$res['message'] = 'All fields are required. Please go back and re-send your message.'
+    	$status = FALSE; 
     }
-	else{
-		$res['message'] = 'Failed to send mail. Please mail me to you@example.com';
-	}
+    elseif (substr($email, -8) != 'ucla.edu') {
+    	$res['message'] = "Sorry! We're currently only accepting UCLA students. Please sign up with your ucla.edu email address if you have one.";
+    }
+    else {
+    	$status = mail($to, $subject, $message, $headers);
+    }
 
+
+	if($status == TRUE){	
+		$res['sendstatus'] = 'done';
+		$res['message'] = "You're all set!";
+    }
 
 	echo json_encode($res);
 }

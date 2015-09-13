@@ -16,7 +16,7 @@ if(isset($_POST['message'])){
     'X-Mailer: PHP/' . phpversion();
 
     if (!$name || !$ email || !$message) {
-    	$res['message'] = 'All fields are required. Please go back and re-send your message.'
+    	$res['message'] = 'All fields are required. Please go back and re-send your message.';
     	$status = FALSE; 
     }
     else {
@@ -26,11 +26,8 @@ if(isset($_POST['message'])){
 
 	if($status == TRUE){	
 		$res['sendstatus'] = 'done';
-		$res['message'] = 'Form Submission Successful';
+		$res['message'] = "You're all set!";
     }
-	else{
-		$res['message'] = 'Form submission failed. Please email me at raks.garg@gmail.com';
-	}
 	 
 	
 	echo json_encode($res);

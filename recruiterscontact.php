@@ -28,11 +28,8 @@ if(isset($_POST['submit'])){
 
 	if($status == TRUE){	
 		$res['sendstatus'] = 'done';
-		$res['message'] = 'Form Submission Successful';
+		$res['message'] = "You're all set!";
     }
-	else{
-		$res['message'] = 'Form submission failed. Please email me at raks.garg@gmail.com';
-	}
 
 
 	echo json_encode($res);

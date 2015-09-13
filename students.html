@@ -123,12 +123,31 @@
                 <div class="pfblock-subtitle">
                     <h4 style=" padding-bottom: 10px; color: white; font-size: 14px; font-weight: 400;">All fields are required. Please use your ucla.edu email address. </h4>
                     <form method="post" action="studentscontact.php">
-                        <input name="name" placeholder="Name" style="color: #000; width: 25%" >
-                        <br>
-                        <input type="email" name="email" placeholder="E-mail" style="color: #000; width: 25%">
-                        <br><br>
-                        <input class="btn btn-lg" id="submit" name = "submit" type="submit" value="Sign me up!" >
-                    </form>
+
+                    <div class="ajax-hidden">
+                        <div class="row col-sm-8 col-sm-offset-2">
+                            <div class="form-group wow fadeInUp">
+                                <label class="sr-only" for="c_name">Name</label>
+                                <input class="form-control" name="name" placeholder="Name">
+                            </div>
+
+                            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                                <label class="sr-only" for="c_email">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <input class="btn btn-lg col-sm-2 contact-btn" id="submit" name = "submit" type="submit" value="Sign me up!" >
+                            <div class="col-sm-5"></div>
+                        </div>
+
+                    <div class="ajax-response"></div>
+
+
+
+            </form>
 
                 </div>
             </div>
