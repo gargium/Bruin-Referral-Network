@@ -7,7 +7,7 @@ if(isset($_POST['message'])){
 	$email = $_POST['email'];
 	$message = $_POST['message'];
     
-	
+
 	$to      = 'raks.garg@gmail.com';
 	$subject = 'Gig General Contact Form';
 
@@ -26,7 +26,7 @@ if(isset($_POST['message'])){
 	else{
 		$res['message'] = 'Failed to send mail. Please mail me to you@example.com';
 	}
-	
+	 
 	
 	echo json_encode($res);
 }
