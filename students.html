@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean - One Page Personal Portfolio</title>
+    <title>Gig</title>
 
     <!-- CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -43,14 +43,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">GIG</a>
+                <a class="navbar-brand" href="index.html">Gig</a>
             </div>
 
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li class="active"><a href="students.html">Students</a></li>
+                    <li class="active"><a href="students.php">Students</a></li>
                     <li><a href="recruiters.html">Recruiters</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -81,14 +81,17 @@
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">Students</h2>
                         <div class="pfblock-subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at
-                            dictum turpis. Maecenas posuere, nisl a auctor maximus, turpis diam lobortis
-                            purus, et consequat sapien dolor at lacus. Nulla cursus a lorem ac sodales. Suspendisse
-                            rutrum, tellus non tempus pretium, est ligula dictum erat, in congue turpis dolor ut erat.
-                            Nulla at risus tempor, interdum elit nec, luctus ipsum. In pharetra, tellus et tristique
-                            vestibulum, arcu dolor iaculis erat, nec pretium ex neque sit amet augue. Donec posuere
-                            elit a enim ornare, nec dictum nisl mattis. Pellentesque dignissim purus vitae odio
-                            pellentesque, sed convallis libero efficitur.
+                            Connection building can be tough and seem extraneous when beginning a career in a field you love.
+                            That’s why we want to help out. So sign up! Its free and always will be.
+                            <br><br><br><div style="font-size: 20px; color: black;">How it works:</div> <br>
+                            Simply sign up with your name and email address. You will receive an email with a
+                            link to send in your resume. From there we will send it to recruiters and companies
+                            looking for top talent like you. You’ll get emails about new opportunities, get
+                            introduced to numerous Bruins, and gain referrals and connections within organizations we think you’ll love.
+
+                            <br><br>
+                            <a href="#info" class="btn btn-lg">Let's get started</a>
+
                         </div>
                     </div>
 
@@ -107,61 +110,53 @@
 
 <!-- CallToAction start -->
 
-<section class="pfblock calltoaction">
+<section class="pfblock calltoaction" id="info">
     <div class="container">
 
         <div class="row text-center">
-            <h2 style="padding-bottom: 10px;">Send In Your Info</h2>
+            <h1 style="padding-bottom: 10px; padding-top:100px; ">Send In Your Info</h1>
         </div>
-        <div class="row" style="padding-bottom: 10px;">
+        <div class="row" style="padding-bottom: 0px;">
             <div class="col-lg-1"></div>
-            <div class="col-lg-5 pfblock-subtitle" style="color: white;">
-                Rohan Kapoor, Rak Garg, and trusted recruiters are the only ones who will be granted access.
+            <div class="pfblock-subtitle" style="color: white;">
                 <div class="pfblock-subtitle">
-                    <div class="calltoaction-btn">
-                        <form action="students.html" method="post" enctype="multipart/form-data">
-                        
-                        <input type="file" name="resume">
-                        <input type="submit" name="upload" value="Send Resume">
-
+                    <h4 style=" padding-bottom: 10px; color: white; font-size: 14px; font-weight: 400;">All fields are required. Please use your ucla.edu email address. </h4>
+                    <form method="post" action="studentscontact.php">
+                        <input name="name" placeholder="Name" style="color: #000; width: 25%" >
+                        <br>
+                        <input type="email" name="email" placeholder="E-mail" style="color: #000; width: 25%">
+                        <br><br>
+                        <input class="btn btn-lg" id="submit" name = "submit" type="submit" value="Sign me up!" >
                     </form>
 
-                    <?php 
-                    if (isset($_POST['upload'])) {
-                        echo $file_name = $_FILES['resume']['name'];
-                        $file_type = $_FILES['resume']['type'];
-                        $file_size = $_FILES['resume']['size'];
-                        $file_tmp_name = $_FILES['resume']['tmp_name'];
-                    }
-
-
-                    ?> 
-                    <!--  <a href="" class="btn btn-lg">Send Resume</a> -->
-                    </div>
                 </div>
             </div>
-            <div class="col-lg-5 pfblock-subtitle wow fadeIn" style="color:white;">
-                Join our mailing list to recieve updates on our activity and the latest recruitment opportunities.
-                <div class="pfblock-subtitle" style="color:#111; font-weight: 100; margin-top: 5px; margin-bottom: 5px;">
-                    <input placeholder="UCLA emails only" style="width: 250px; line-height: 40px; border: 1px solid #111; background: rgba(255, 255, 255, .8); border-radius:2px;">
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
         </div>
-    </div><!-- .container -->
 </section>
 
 <!-- CallToAction end -->
 
-<section class="pfblock pfblock-gray">
+<!-- <section class="pfblock pfblock-gray">
     <div class="container"></div>
 </section>
-
+ -->
 
 <!-- Footer start -->
 
 <footer id="footer">
     <div class="container">
+        <div class="row" style="padding-top: 20px;">
+
+            <div class="col-sm-12" style="padding-bottom: 40px;">
+                <a href="index.html" style="border-right: 1px solid white; padding-right: 20px;">Home</a>
+                <a href="about.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">About</a>
+                <a href="students.php" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Students</a>
+                <a href="recruiters.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Recruiters</a>
+                <a href="contact.html" style="border-right: 1px solid white; padding-right: 20px; padding-left: 20px;">Contact</a>
+                <a href="faq.html" style="padding-left: 20px;">FAQs</a>
+            </div>
+
+        </div><!-- .row -->
         <div class="row">
 
             <div class="col-sm-12">
@@ -174,11 +169,11 @@
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
                 </ul>
 
-                <p class="heart">
-                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
+                <p style="margin-bottom: 5px !important;">
+                    an alternative to a traditional hiring experience.
                 </p>
                 <p class="copyright">
-                    © 2015 John Doe | Images: <a href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
+                    © 2015 Gig | Images: <a href="https://unsplash.com/">Unsplash</a></a>
                 </p>
 
             </div>
