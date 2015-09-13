@@ -1134,5 +1134,15 @@ figure.effect-bubba:hover p {
 	overflow: hidden;
 }
 
+.faqs-background{
+	background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../images/sky.jpg);
+	width: 100%;
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
 
 
