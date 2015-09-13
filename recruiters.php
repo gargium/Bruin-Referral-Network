@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gig</title>
+    <title>Clean - One Page Personal Portfolio</title>
 
     <!-- CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -43,10 +43,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="students.html">Students</a></li>
+                    <li><a href="students.php">Students</a></li>
                     <li class="active"><a href="recruiters.html">Recruiters</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
                 </ul>
             </div>
 
@@ -88,27 +87,31 @@
 
         </div><!-- .row -->
         <div class="pfblock-line"></div>
-        <form method="post" action="recruiterscontact.php">
+<!--         <form id="contact-form" role="form">
             <div class="row" style="padding-top: 0px;">
                 <div class="col-sm-6 flex-center-vertically">
 
                         <div class="ajax-hidden">
                             <div class="form-group wow fadeInUp">
                                 <label class="sr-only" for="c_name">Name</label>
-                                <input class="form-control" name="name" placeholder="Name">
-                            </div>
-
-                            <div class="form-group wow fadeInUp">
-                                <label class="sr-only" for="c_company">Company</label>
-                                <input class="form-control" name="company" placeholder="Company">
+                                <input type="text" id="c_name" class="form-control" style="font-size: 14px;" name="c_name" placeholder="Name*">
                             </div>
 
                             <div class="form-group wow fadeInUp" data-wow-delay=".1s">
-                                <label class="sr-only" for="c_email">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                                <label class="sr-only" for="c_company">Company</label>
+                                <input type="text" id="c_company" class="form-control" style=" font-size: 14px;" name="c_compnay" placeholder="Company*">
                             </div>
 
-
+                            <div class="row">
+                                <div class="col-sm-8 form-group wow fadeInUp" data-wow-delay=".1s">
+                                    <label class="sr-only" for="c_email">Email</label>
+                                    <input type="email" id="c_email" class="form-control" style=" font-size: 14px;" name="c_email" placeholder="E-mail*">
+                                </div>
+                                <div class="col-sm-4 form-group wow fadeInUp" data-wow-delay=".1s">
+                                    <label class="sr-only" for="c_phone">Phone</label>
+                                    <input type="tel" id="c_phone" class="form-control" style=" font-size: 14px;" name="c_phone" placeholder="Phone">
+                            </div>
+                        </div>
 
                     </div>
 
@@ -119,7 +122,7 @@
                     <div class="ajax-hidden">
 
                         <div class="form-group wow fadeInUp" data-wow-delay=".2s">
-                            <textarea class="form-control" name="message" rows="7" placeholder="Message"></textarea>
+                            <textarea class="form-control" id="c_message" name="c_message" rows="7" style=" font-size: 14px;" placeholder="What type of students are you looking for?*"></textarea>
                         </div>
 
                     </div>
@@ -130,14 +133,83 @@
 
             <div class="row" style="text-align: center;">
                 <div class="col-sm-5"></div>
-                <input class="btn btn-lg col-sm-2 contact-btn" id="submit" name = "submit" type="submit" value="submit" >
+                <a href="#info" class="btn btn-lg col-sm-2">Send</a>
                 <div class="col-sm-5"></div>
             </div>
-        </form>
+        </form> -->
 
 
+        
+                <?php
+                    //check for header injections
+                    function has_header_injection($str) {
+                        return preg_match("/[\r\n]/", $str);
+                    }
 
-    </div><!-- .row -->
+                    if (isset($_POST['contact_submit'])) {
+                        $name = trim($_POST['name']);
+                        $name = trim($_POST['company']); 
+                        $email = trim($_POST['email']); 
+                        $message = trim($_POST['message']);
+                        //check to see if name or email have header injections
+                        if (has_header_injection($name) || has_header_injection($company) || has_header_injection($email) || has_header_injection($message)) {
+                            die(); 
+                        } 
+
+                        //basic validation checks
+                        if (!$name || !company || !$email || !$message) {
+                            echo '<script>alert("All fields are required.")</script>'; 
+                        }
+
+                        //add recipient
+                        $to = "raks.garg@gmail.com";
+                        $subject = "$name wants to be on the email list for Gig!";
+                        $email_body  = "Name: $name\r\n";
+                        $email_body .= "Company: $company\r\n";
+                        $email_body .= "Email: $email\r\n"; 
+                        $email_body .= "Message: $message\r\n"; 
+
+                        $email_body = wordwrap($email_body, 72); 
+
+                        //set mail headers 
+                        $headers = "MIME-Version: 1.0\r\n";
+                        $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n"; 
+                        $headers .= "From: $name <$email> \r\n";
+                        $headers .= "X-Priority: 1\r\n";
+                        $headers .= "X-MSMail-Priority: High\r\n\r\n"; 
+
+                        //send mail
+                        mail($to, $subject, $email_body, $headers); 
+                ?>
+                <!-- show success message -->
+                <h5>You're all set. We'll contact you shortly.</h5>
+                <?php } else { ?>
+
+                <form method="post" action="" id="contact-form">
+                    <div class="row" style="padding-bottom: 0px;">
+            <div class="col-sm-6 flex-center-vertically">
+                    <div class="form-group wow fadeInUp">
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Name" style="color: #000; width: 25%" >
+                    </div>
+                    <br>
+                    <div class="form-group wow fadeInUp">
+                    <input class="form-control" type="text" id="company" name="company" placeholder="Company" style="color: #000; width: 25%">
+                    </div>                        
+                    <br>
+                    <div class="form-group wow fadeInUp">
+                    <input class="form-control" type="text" id="email" name="email" placeholder="Email" style="color: #000; width: 25%">
+                    </div>                        
+                    <br>
+                    <div class="form-group wow fadeInUp">
+                    <textarea rows="7" class="form-control" type="text" id="message" name="message" placeholder="What kind of students are you looking for?" style="color: #000; width: 25%"></textarea>
+                    </div>                        
+                    <br><br>
+                    <input type="submit" name="contact_submit" class="btn btn-lg" value="Sign me up">
+                            </div>
+        </div>
+                </form>
+                <?php } ?>
+    </div>
 </section>
 
 <!-- Testimonial end -->
