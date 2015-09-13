@@ -16,7 +16,7 @@ if(isset($_POST['message'])){
     $email_body .= 'Company: $company\r\n'; 
     $email_body .= 'Message: $message\r\n'
 
-	$headers = 'From: '. $name . "\r\n" .
+	$headers = 'From: '. $email . "\r\n" .
     'Reply-To: '. $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
