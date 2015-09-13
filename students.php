@@ -81,11 +81,14 @@
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">Students</h2>
                         <div class="pfblock-subtitle">
-                            Connection building can be tough and seem extraneous to getting an internship in the field you love. 
-                            That's why we do it for you, so that you can get back to what's important.<br><br>Our function is simple: We take your 
-                            email address and resume, and connect it to recruiters and companies looking for top talent like you. You'll get emails
-                            about new opportunities, get introduced to numerous Bruins, and gain referrals and connections within organizations we think
-                            you'll love. 
+                            Connection building can be tough and seem extraneous when beginning a career in a field you love.
+                            That’s why we want to help out. So sign up! Its free and always will be.
+                            <br><br><br><div style="font-size: 20px; color: black;">How it works:</div> <br>
+                            Simply sign up with your name and email address. You will receive an email with a
+                            link to send in your resume. From there we will send it to recruiters and companies
+                            looking for top talent like you. You’ll get emails about new opportunities, get
+                            introduced to numerous Bruins, and gain referrals and connections within organizations
+                            we think you’ll love.
 
                             <br><br>
                             <a href="#info" class="btn btn-lg">Let's get started</a>
@@ -117,7 +120,6 @@
         <div class="row" style="padding-bottom: 0px;">
             <div class="col-lg-1"></div>
             <div class="pfblock-subtitle" style="color: white;">
-                <h2>Join our mailing list and we'll send you instructions on what to do next. </h2>
                 <div class="pfblock-subtitle">
 
                     <?php
@@ -170,7 +172,7 @@
                     <?php } else { ?>
 
 
-                    <h4 style="padding-top:10px">All fields are required. Use your ucla.edu email address. </h4>
+                    <h4 style=" padding-bottom: 10px; color: white; font-size: 14px; font-weight: 400;">All fields are required. Please use your ucla.edu email address. </h4>
                     <form method="post" action="" id="contact-form">
                         <input type="text" id="name" name="name" placeholder="name" style="color: #000; width: 25%" >
                         <br>
