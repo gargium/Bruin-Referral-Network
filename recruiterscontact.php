@@ -1,7 +1,7 @@
 
 <?php
 
-if(isset($_POST['message'])){
+if(isset($_POST['submit'])){
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
@@ -11,10 +11,10 @@ if(isset($_POST['message'])){
 	$to      = 'raks.garg@gmail.com';
 	$subject = 'Gig Recruiters Contact Form';
 
-    $email_body = 'Name: $name\r\n' ;
-    $email_body .=  'Email: $email\r\n'; 
-    $email_body .= 'Company: $company\r\n'; 
-    $email_body .= 'Message: $message\r\n';
+    $email_body = "Name: $name\r\n" ;
+    $email_body .=  "Email: $email\r\n";
+    $email_body .= "Company: $company\r\n";
+    $email_body .= "Message: $message\r\n";
 
 	$headers = 'From: '. $email . "\r\n" . 'Reply-To: '. $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
