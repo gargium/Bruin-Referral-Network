@@ -1,6 +1,4 @@
-
 <?php
-
 if(isset($_POST['message'])){
 
 	$name = $_POST['name'];
@@ -16,21 +14,26 @@ if(isset($_POST['message'])){
     'X-Mailer: PHP/' . phpversion();
 
     if (!$name || !$email || !$message) {
-    	$res['message'] = 'All fields are required. Please go back and re-send your message.';
-    	$status = FALSE; 
-    }
+    $message = 'All fields are required. Please re-send your message.';
+
+    echo "<script type='text/javascript'>
+        alert('$message');
+        window.location.replace(\"contact.html\");
+    </script>";
+      $status = FALSE; 
+	}
     else {
     	$status = mail($to, $subject, $message, $headers);
     }
 
-
 	if($status == TRUE){	
-		$res['sendstatus'] = 'done';
-		$res['message'] = "You're all set!";
+		$message = 'Thanks for reaching out! We will be in touch.';
+
+		 echo "<script type='text/javascript'>
+        alert('$message');
+        window.location.replace(\"contact.html\");
+    </script>";
     }
-	 
-	
-	echo json_encode($res);
 }
 
 ?>
