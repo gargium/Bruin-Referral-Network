@@ -16,12 +16,23 @@ if(isset($_POST['submit'])){
     'X-Mailer: PHP/' . phpversion();
 
 	if (!$name || !$email) {
-    	$res['message'] = 'All fields are required. Please go back and re-send your message.';
-    	$status = FALSE; 
+    	$message = 'All fields are required. Please re-send your message.';
+
+    echo "<script type='text/javascript'>
+        alert('$message');
+                window.location.replace(\"students.html\");
+    </script>";
+      $status = FALSE; 
     }
     elseif (substr($email, -8) != 'ucla.edu') {
-    	$res['message'] = "Sorry! We're currently only accepting UCLA students. Please sign up with your ucla.edu email address if you have one.";
-    	    	$status = FALSE; 
+    	$message = 'Sorry! We are currently only accepting UCLA students. 
+        Try again with your ucla.edu email address.';
+
+    echo "<script type='text/javascript'>
+        alert('$message');
+                window.location.replace(\"students.html\");
+    </script>";
+      $status = FALSE; 
     }
     else {
     	$status = mail($to, $subject, $message, $headers);
@@ -29,8 +40,13 @@ if(isset($_POST['submit'])){
 
 
 	if($status == TRUE){	
-		$res['sendstatus'] = 'done';
-		$res['message'] = "You're all set!";
+		$message = 'Thanks for signing up! We will be in touch.';
+
+         echo "<script type='text/javascript'>
+        alert('$message');
+        window.location.replace(\"students.html\");
+
+        </script>";
     }
 
 	echo json_encode($res);

@@ -19,20 +19,28 @@ if(isset($_POST['submit'])){
 	$headers = 'From: '. $email . "\r\n" . 'Reply-To: '. $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 	if (!$name || !$email || !$message || !$company ) {
-    	$res['message'] = 'All fields are required. Please go back and re-send your message.';
-    	$status = FALSE; 
+    	$message = 'All fields are required. Please re-send your message.';
+
+    echo "<script type='text/javascript'>
+        alert('$message');
+                window.location.replace(\"recruiters.html\");
+    </script>";
+      $status = FALSE; 
     }
     else {
     	$status = mail($to, $subject, $email_body, $headers);
     }
 
 	if($status == TRUE){	
-		$res['sendstatus'] = 'done';
-		$res['message'] = "You're all set!";
+		$message = 'Thanks for reaching out! We will be in touch.';
+
+		 echo "<script type='text/javascript'>
+    	alert('$message');
+    	        window.location.replace(\"recruiters.html\");
+
+    	</script>";
     }
 
-
-	echo json_encode($res);
 }
 
 ?>
